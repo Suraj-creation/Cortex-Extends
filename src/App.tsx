@@ -25,7 +25,16 @@ import {
   MessageCircle,
   Terminal,
   Activity,
-  Shield
+  Shield,
+  HardDrive,
+  Book,
+  User,
+  Eye,
+  Lightbulb,
+  FileText,
+  ShieldAlert,
+  Target,
+  Map
 } from 'lucide-react';
 
 // Initialize Gemini (properly lazy-loaded)
@@ -463,16 +472,16 @@ const Agents = () => {
 
 const Apps = () => {
   const apps = [
-    { icon: '💾', name: 'FORGE', tag: 'Today' },
-    { icon: '📖', name: 'CHRONICLE', tag: 'Months' },
-    { icon: '🪞', name: 'MIRROR', tag: 'Months' },
-    { icon: '👁️', name: 'PRESENCE', tag: 'Today' },
-    { icon: '🔮', name: 'ORACLE', tag: 'Months' },
-    { icon: '💡', name: 'INSIGHT', tag: 'Months' },
-    { icon: '📜', name: 'NARRATIVE', tag: 'Years' },
-    { icon: '⚠️', name: 'BEACON', tag: 'Months' },
-    { icon: '🎯', name: 'ACCEL', tag: 'Today' },
-    { icon: '🗺️', name: 'LOCUS', tag: 'Years' },
+    { icon: HardDrive, name: 'FORGE', tag: 'Today' },
+    { icon: Book, name: 'CHRONICLE', tag: 'Months' },
+    { icon: User, name: 'MIRROR', tag: 'Months' },
+    { icon: Eye, name: 'PRESENCE', tag: 'Today' },
+    { icon: Search, name: 'ORACLE', tag: 'Months' },
+    { icon: Lightbulb, name: 'INSIGHT', tag: 'Months' },
+    { icon: FileText, name: 'NARRATIVE', tag: 'Years' },
+    { icon: ShieldAlert, name: 'BEACON', tag: 'Months' },
+    { icon: Target, name: 'ACCEL', tag: 'Today' },
+    { icon: Map, name: 'LOCUS', tag: 'Years' },
   ];
 
   return (
@@ -491,8 +500,8 @@ const Apps = () => {
               key={i}
               className="p-10 border border-zinc-100 hover:bg-zinc-50 transition-all group"
             >
-              <div className="text-4xl mb-8 group-hover:scale-110 transition-transform">
-                {app.icon}
+              <div className="text-zinc-300 group-hover:text-primary mb-8 group-hover:scale-110 transition-all duration-300">
+                <app.icon size={32} strokeWidth={1.5} />
               </div>
               <h4 className="font-black text-xl italic uppercase mb-2 text-bg-deep tracking-tighter">{app.name}</h4>
               <span className="text-[9px] font-black uppercase tracking-[0.3em] text-zinc-400">
@@ -537,8 +546,8 @@ const Privacy = () => (
             <div className="w-20 h-[1px] bg-white"></div>
             <div className="w-20 h-[1px] bg-white"></div>
           </div>
-          <div className="w-64 h-64 border-8 border-primary rounded-full flex items-center justify-center text-5xl">
-            🔒
+          <div className="w-64 h-64 border-8 border-primary rounded-full flex items-center justify-center text-primary">
+            <Lock size={80} strokeWidth={1} />
           </div>
         </div>
       </div>
