@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Geometric Balance Palette */
+  --color-primary: #3B82F6; /* Blue-500 */
+  --color-primary-dark: #2563EB; /* Blue-600 */
+  --color-bg-deep: #050505;
+  --color-surface: #111111;
+  --color-surface-2: #18181B; /* Zinc-900 */
+  --color-surface-3: #27272A; /* Zinc-800 */
+  --color-border-subtle: #3F3F46; /* Zinc-700 */
+
+  --animate-orbit: orbit 20s linear infinite;
+
+  @keyframes orbit {
+    from { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-[#050505] text-zinc-100 font-sans antialiased selection:bg-primary/30 selection:text-white;
+  }
+}
+
+@layer utilities {
+  .geometric-grid {
+    background-image: 
+      linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  
+  .writing-vertical {
+    writing-mode: vertical-rl;
+  }
+
+  .grad-cyan-blue {
+    @apply bg-linear-to-br from-cyan-500 to-blue-600;
+  }
+}
+
